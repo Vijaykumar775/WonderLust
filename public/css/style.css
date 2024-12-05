@@ -1,0 +1,123 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  height: 5rem;
+  /* z-index: 99; */
+  background-color: antiquewhite;
+}
+
+.container {
+  flex: 1;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link:hover {
+  color: #222222;
+  font-weight: 600;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links {
+  width: 100%;
+}
+
+.f-info-social {
+  width: 100%;
+}
+
+.f-info-social i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info {
+  text-align: center;
+  height: 8rem;
+  display: flex;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  padding: 10px 0;
+}
+
+.card {
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.card2 {
+  border: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  border-radius: 1rem;
+  width: 100%;
+  object-fit: cover;
+  padding: 8px;
+}
+
+.card2 img {
+  border-radius: 1rem;
+  width: 100%;
+  object-fit: cover;
+  padding: 8px;
+}
+
+.editImg img {
+  height: 14rem;
+  width: 18rem;
+  border-radius: 1rem;
+  object-fit: cover;
+  padding: 8px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+.show-btn {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.show-btn .btn {
+  padding: 6px 24px;
+  margin-right: 4rem;
+}
+
+.showData img {
+  height: 25rem;
+  width: 45rem;
+}

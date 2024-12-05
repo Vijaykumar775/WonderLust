@@ -1,0 +1,80 @@
+<% layout("/layouts/boilerPlate") %>
+<body>
+  <h2>Create a new listing</h2>
+  <br />
+  <form
+    method="post"
+    action="/listing"
+    class="needs-validation"
+    novalidate
+    enctype="multipart/form-data"
+  >
+    <div>
+      <input
+        type="text"
+        name="listing[title]"
+        placeholder="Title"
+        class="form-control"
+        required
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <br />
+    <br />
+    <div>
+      <textarea
+        name="listing[description]"
+        placeholder="Description"
+        class="form-control"
+        required
+      ></textarea>
+      <div class="invalid-feedback">Please enter a Description.</div>
+    </div>
+    <br /><br />
+    <!-- <input
+      type="text"
+      name="listing[image]"
+      placeholder="Image link"
+      class="form-control"
+      required
+    /> -->
+    <div>
+      <label for="img"><b>Upload Image :</b> </label>
+      <br />
+      <input
+        type="file"
+        id="img"
+        name="listing[image]"
+        placeholder="Image"
+        class="form-control"
+        required
+      />
+    </div>
+    <br /><br />
+    <input
+      type="number"
+      name="listing[price]"
+      placeholder="Price"
+      class="form-control"
+      required
+    />
+    <br /><br />
+    <input
+      type="text"
+      name="listing[location]"
+      placeholder="Location"
+      class="form-control"
+      required
+    />
+    <br /><br />
+    <input
+      type="text"
+      name="listing[country]"
+      placeholder="Country"
+      class="form-control"
+      required
+    />
+    <br /><br />
+    <button class="btn btn-primary mb-4">Add Listing</button>
+  </form>
+</body>

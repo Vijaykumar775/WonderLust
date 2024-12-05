@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerPlate") %>
+<body>
+  <h2>Edit Listing</h2>
+  <br />
+  <form
+    method="post"
+    action="/listing/<%= showData._id %>?_method=PUT"
+    class="needs-validation"
+    novalidate
+    enctype="multipart/form-data"
+  >
+    <input
+      type="text"
+      name="listing[title]"
+      value="<%= showData.title %>"
+      class="form-control"
+      required
+    />
+    <br />
+    <br />
+    <textarea name="listing[description]" class="form-control">
+<%= showData.description %>
+      </textarea
+    >
+    <br /><br />
+    <b>Original Image</b>
+    <div class="editImg">
+      <img src="<%= showData.image.url %>" alt="" />
+    </div>
+
+    <label for="img"><b>Upload New Image</b></label>
+    <input type="file" name="listing[image]" class="form-control" />
+    <br /><br />
+    <input
+      type="number"
+      name="listing[price]"
+      value="<%= showData.price %>"
+      class="form-control"
+      required
+    />
+    <br /><br />
+    <input
+      type="text"
+      name="listing[location]"
+      value="<%= showData.location %>"
+      class="form-control"
+      required
+    />
+    <br /><br />
+    <input
+      type="text"
+      name="listing[country]"
+      value="<%= showData.country %>"
+      class="form-control"
+      required
+    />
+    <br /><br />
+    <button class="btn btn-primary mb-4">Update</button>
+  </form>
+</body>

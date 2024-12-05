@@ -1,0 +1,133 @@
+<% layout("/layouts/boilerPlate") %>
+
+<style>
+  .filters {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  .filter {
+    text-align: center;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .filter:hover {
+    opacity: 1;
+  }
+
+  .tax-switch {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .tax {
+    display: none;
+  }
+</style>
+
+<body>
+  <!-- <h2>All Listing</h2> -->
+  <div class="filters my-3">
+    <div class="filter">
+      <i class="fa-solid fa-fire"></i>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-bed"></i>
+      <p>Rooms</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-umbrella-beach"></i>
+      <p>Beach</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-warehouse"></i>
+      <p>Warehouse</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-film"></i>
+      <p>Films</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-person-swimming"></i>
+      <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-mountain-sun"></i>
+      <p>Amazing View</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-plane-departure"></i>
+      <p>Plane Dipature</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-bowl-food"></i>
+      <p>Foods</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-champagne-glasses"></i>
+      <p>Drinks</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-wine-bottle"></i>
+      <p>Wines</p>
+    </div>
+    <div class="filter">
+      <i class="fa-brands fa-fort-awesome"></i>
+      <p>Castles</p>
+    </div>
+
+    <div class="tax-switch">
+      <div class="form-check-reverse form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >Display Taxes</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 my-3">
+    <% for(let list of allData) { %>
+    <div class="card">
+      <a href="/listing/<%= list._id %>">
+        <img src="<%= list.image.url %>" alt="images" style="height: 20rem" />
+        <div class="card-img-overlay"></div>
+      </a>
+
+      <div class="card-body">
+        <h5 class="card-title"><%= list.title %></h5>
+        &#8377; <%= list.price %> / Night
+        <i class="tax"> +18% GST</i>
+
+        <!-- <p class="card-text"><%= list.description %></p> -->
+        <p><b><%= list.location %></b>, <b><%= list.country %></b></p>
+        <!-- <a href="/listing/<%= list._id %>" class="btn btn-primary"
+          >Show Details</a
+        > -->
+      </div>
+    </div>
+    <% } %>
+  </div>
+</body>
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  let taxInfo = document.getElementsByClassName("tax");
+  taxSwitch.addEventListener("click", () => {
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>
